@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescott Paws Dog Walking Services - Professional Pet Care in Prescott, AZ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2c5530 0%, #4a7c59 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo::before {
+            content: "🐕";
+            font-size: 2rem;
+        }
+
+        .contact-info {
+            text-align: right;
+            font-size: 1.1rem;
+        }
+
+        .phone {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #87ceeb;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(76, 124, 89, 0.8), rgba(76, 124, 89, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23e8f5e8" width="1200" height="600"/><path fill="%234a7c59" opacity="0.1" d="M0,300 C300,200 600,400 900,300 C1050,250 1150,350 1200,300 L1200,600 L0,600 Z"/></svg>');
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            background: #e74c3c;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c5530;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: #4a7c59;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2c5530;
+        }
+
+        .price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-top: 1rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            background: #4a7c59;
+            color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 4rem;
+        }
+
+        .credentials {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            border-left: 5px solid #4a7c59;
+        }
+
+        .credentials h3 {
+            color: #2c5530;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 60px 0;
+            background: #2c5530;
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info-section h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-item::before {
+            content: "📍";
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .contact-item.phone::before {
+            content: "📞";
+        }
+
+        .contact-item.email::before {
+            content: "✉️";
+        }
+
+        .contact-form {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                text-align: center;
+            }
+
+            .contact-info {
+                text-align: center;
+                margin-top: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Trust indicators */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            background: white;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-weight: bold;
+            color: #2c5530;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    Prescott Paws
+                </div>
+                <div class="contact-info">
+                    <div class="phone">(928) XXX-XXXX</div>
+                    <div>Serving Prescott & Prescott Valley</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Professional Dog Walking Services</h1>
+            <p>Reliable, caring, and experienced pet care for your beloved companions in the Prescott area</p>
+            <div class="trust-badges">
+                <div class="trust-badge">4+ Years Experience</div>
+                <div class="trust-badge">PetSmart Certified</div>
+                <div class="trust-badge">Fully Insured</div>
+                <div class="trust-badge">Local & Trusted</div>
+            </div>
+            <a href="#contact" class="cta-button">Schedule Your Free Consultation</a>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🚶‍♂️</div>
+                    <h3>Daily Dog Walking</h3>
+                    <p>30-minute walks tailored to your dog's energy level and needs. Perfect for busy schedules or when you're away from home.</p>
+                    <div class="price">Starting at $25</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Pet Sitting</h3>
+                    <p>In-home care while you're away. Feeding, walks, playtime, and companionship to keep your pet comfortable and happy.</p>
+                    <div class="price">Starting at $35/visit</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎾</div>
+                    <h3>Puppy Care</h3>
+                    <p>Specialized care for puppies including house training support, socialization, and age-appropriate exercise and play.</p>
+                    <div class="price">Starting at $30</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">About Your Dog Walker</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    🐕‍🦺
+                    <div style="font-size: 1rem; margin-top: 1rem;">Professional Pet Care</div>
+                </div>
+                <div>
+                    <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                        Hello! I'm your local dog walking professional, bringing years of hands-on experience caring for dogs of all sizes and temperaments. Having recently moved to the beautiful Prescott area, I'm excited to provide reliable, professional pet care services to our community.
+                    </p>
+                    <div class="credentials">
+                        <h3>Professional Experience</h3>
+                        <ul style="margin-left: 2rem;">
+                            <li><strong>4 Years as Manager</strong> at PetSmart PetHotel</li>
+                            <li>Experience with dogs of all breeds, sizes, and ages</li>
+                            <li>Trained in pet safety, behavior, and emergency care</li>
+                            <li>Currently completing college education online</li>
+                            <li>Fully insured and bonded for your peace of mind</li>
+                        </ul>
+                    </div>
+                    <p style="margin-top: 2rem; font-size: 1.1rem;">
+                        I understand that your pets are family members, and I treat them with the same love and attention I'd give my own. You can trust that your furry friends are in caring, experienced hands.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info-section">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item phone">(928) XXX-XXXX</div>
+                    <div class="contact-item email">prescottpaws@email.com</div>
+                    <div class="contact-item">Prescott & Prescott Valley, AZ</div>
+                    
+                    <h3 style="margin-top: 2rem;">Service Hours</h3>
+                    <p><strong>Monday - Friday:</strong> 7:00 AM - 7:00 PM</p>
+                    <p><strong>Saturday - Sunday:</strong> 8:00 AM - 6:00 PM</p>
+                    <p><strong>Emergency Care:</strong> Available by arrangement</p>
+
+                    <h3 style="margin-top: 2rem;">Why Choose Prescott Paws?</h3>
+                    <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                        <li>Professional experience in pet care management</li>
+                        <li>Personalized attention for each pet</li>
+                        <li>Detailed updates and photos after each visit</li>
+                        <li>Flexible scheduling to fit your needs</li>
+                        <li>Competitive rates for quality care</li>
+                    </ul>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Schedule Your Free Consultation</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="pets">Tell us about your pets</label>
+                            <textarea id="pets" name="pets" placeholder="Pet names, breeds, ages, and any special needs or instructions..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="services">Services Needed</label>
+                            <textarea id="services" name="services" placeholder="What services are you interested in? When do you need care?"></textarea>
+                        </div>
+                        <button type="submit" class="cta-button" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Prescott Paws Dog Walking Services. Proudly serving Prescott and Prescott Valley, Arizona.</p>
+            <p>Licensed, Insured, and Committed to Your Pet's Happiness</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for contact link
+        document.querySelector('a[href="#contact"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('#contact').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
+        // Form submission (you'll need to connect this to your email service)
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I\'ll get back to you within 24 hours to schedule your free consultation.');
+            this.reset();
+        });
+
+        // Add subtle animation on scroll
+        window.addEventListener('scroll', function() {
+            const cards = document.querySelectorAll('.service-card');
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                const cardBottom = card.getBoundingClientRect().bottom;
+                
+                if (cardTop < window.innerHeight && cardBottom > 0) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // Initialize card animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.service-card');
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.6s ease';
+            });
+        });
+    </script>
+</body>
+</html>
