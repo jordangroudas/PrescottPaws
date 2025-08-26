@@ -40,7 +40,7 @@
         header {
             background: linear-gradient(135deg, #2c5530 0%, #4a7c59 100%);
             color: white;
-            padding: 1rem 0;
+            padding: 0.75rem 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
@@ -49,6 +49,7 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            min-height: 80px;
         }
 
         .logo {
@@ -60,8 +61,7 @@
         }
 
         .logo::before {
-            content: "🐕";
-            font-size: 2rem;
+            content: "";
         }
 
         .contact-info {
@@ -336,8 +336,9 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo">
-                    Prescott Paws
+                <div class="logo" style="font-size: 0;">
+                 <style>.logo::before { content: ""; }</style>
+                <img src="prescott-paws-logo.png" alt="Prescott Paws Logo" style="height: 60px; width: auto;">
                 </div>
                 <div class="contact-info">
                     <div class="phone">(714) 454-1121</div>
